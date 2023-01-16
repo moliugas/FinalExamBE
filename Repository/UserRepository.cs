@@ -13,10 +13,11 @@ namespace FinalExamBE.Repository
             _context = context;
         }
 
-        public void Add(User item)
+        public User Add(User item)
         {
             _context.Add(item);
             _context.SaveChanges();
+            return item;
         }
 
         public User Get(Guid id)
@@ -27,6 +28,14 @@ namespace FinalExamBE.Repository
         public void Delete(Guid id)
         {
             _context.Users.Remove(Get(id));
+            _context.SaveChanges();
+        }
+
+        public void UpdatePassword(Guid id, string password)
+        {
+            var user = _context.Users.Single(x => x.Id == id);
+            user.Password = password;
+            _context.SaveChanges();
         }
 
     }

@@ -1,4 +1,6 @@
 using FinalExamBE.Database;
+using FinalExamBE.Interface;
+using FinalExamBE.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +11,22 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddDbContext<UsersDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Database")));
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+
+var allowAll = "_allowAll";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        name: allowAll,
+        build =>
+         {
+             build.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+         });
+});
 
 var app = builder.Build();
 
@@ -25,5 +42,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors(allowAll);
 
 app.Run();

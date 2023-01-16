@@ -2,10 +2,10 @@
 
 namespace FinalExamBE.Interface
 {
-    public interface IUserRepository
+    public interface IPersonRepository
     {
-        public User Add(User user);
-        public User Get(Guid id);
+        public Person Add(Person item);
+        public Person Get(Guid id);
         public void Delete(Guid id);
     }
 }

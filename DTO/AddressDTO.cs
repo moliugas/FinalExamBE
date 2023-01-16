@@ -1,8 +1,7 @@
-﻿namespace FinalExamBE.Database.Entities
+﻿namespace FinalExamBE.DTO
 {
-    public class Address
+    public class AddressDTO
     {
-        public Guid Id { get; set; }
         public string City { get; set; }
         public string StreetName { get; set; }
         public string BuildingNumber { get; set; }

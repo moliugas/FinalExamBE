@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using FinalExamBE.Database.Entities;
+﻿using FinalExamBE.Database.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinalExamBE.Database
 {
