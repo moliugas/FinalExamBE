@@ -2,10 +2,7 @@
 
 namespace FinalExamBE.Interface
 {
-    public interface IPersonRepository
+    public interface IPersonRepository : IGenericRepository<Person>
     {
-        public Person Add(Person item);
-        public Person Get(Guid id);
-        public void Delete(Guid id);
     }
 }

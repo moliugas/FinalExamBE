@@ -2,10 +2,8 @@
 
 namespace FinalExamBE.Interface
 {
-    public interface IUserRepository
+    public interface IUserRepository : IGenericRepository<User>
     {
-        public User Add(User user);
-        public User Get(Guid id);
-        public void Delete(Guid id);
+        User UpdatePassword(string id, string pass);
     }
 }

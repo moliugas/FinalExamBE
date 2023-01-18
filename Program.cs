@@ -1,6 +1,6 @@
 using FinalExamBE.Database;
+using FinalExamBE.Database.Repository;
 using FinalExamBE.Interface;
-using FinalExamBE.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

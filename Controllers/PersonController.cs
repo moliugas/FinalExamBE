@@ -26,8 +26,7 @@ namespace FinalExamBE.Controllers
                 PersonalCode = item.PersonalCode,
                 PhoneNumber = item.PhoneNumber,
                 Email = item.Email,
-                ProfilePicture = item.ProfilePicture,
-                AddressId = item.AddressId
+                ProfilePicture = item.ProfilePicture
             });
         }
     }

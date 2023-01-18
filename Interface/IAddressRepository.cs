@@ -2,10 +2,7 @@
 
 namespace FinalExamBE.Interface
 {
-    public interface IAddressRepository
+    public interface IAddressRepository : IGenericRepository<Address>
     {
-        public Address Add(Address user);
-        public Address Get(Guid id);
-        public void Delete(Guid id);
     }
 }
