@@ -50,8 +50,7 @@ namespace FinalExamBE.Repository
                 throw new Exception();
             }
 
-            _context.Remove(entity);
-            _context.Add(item);
+            _context.Update(entity);
             _context.SaveChanges();
 
             return item;

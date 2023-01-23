@@ -1,9 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace FinalExamBE.Database.Entities
+﻿namespace FinalExamBE.Database.Entities
 {
     public class User : GenericEntity
-    {
+    { 
         public string Username { get; set; }
         public string Password { get; set; }
         public int Role { get; set; }
